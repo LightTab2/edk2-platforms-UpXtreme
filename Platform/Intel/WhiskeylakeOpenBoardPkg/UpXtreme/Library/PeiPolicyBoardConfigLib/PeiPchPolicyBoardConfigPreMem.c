@@ -25,11 +25,18 @@ UpdatePeiPchPolicyBoardConfigPreMem (
 {
   EFI_STATUS                         Status;
   PCH_GENERAL_PREMEM_CONFIG          *PchGeneralPreMemConfig;
+  PCH_DCI_PREMEM_CONFIG              *DciPreMemConfig;
 
   DEBUG((DEBUG_INFO, "Updating PCH Policy by board config in Pre Mem\n"));
 
   Status = GetConfigBlock ((VOID *) SiPreMemPolicyPpi, &gPchGeneralPreMemConfigGuid, (VOID *) &PchGeneralPreMemConfig);
   ASSERT_EFI_ERROR (Status);
+
+  Status = GetConfigBlock ((VOID *) SiPreMemPolicyPpi, &gDciPreMemConfigGuid, (VOID *) &DciPreMemConfig);
+  ASSERT_EFI_ERROR (Status);
+
+  DciPreMemConfig->PlatformDebugConsent = 3;
+  DciPreMemConfig->DciUsb3TypecUfpDbg = 1;
 
   return Status;
 }

@@ -16,7 +16,7 @@ BOSC NanhuDev UEFI can currently use Opensbi+UEFI firmware+GRUB to successfully 
      sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build uuide-dev
      ```
 
-2. Follow edk2-platforms/Readme.md to obtaining source code, and config build env. For Example:
+2. Follow edk2-platforms-UpXtreme/Readme.md to obtaining source code, and config build env. For Example:
 
    ```
    export WORKSPACE=/work/git/tianocore
@@ -26,12 +26,12 @@ BOSC NanhuDev UEFI can currently use Opensbi+UEFI firmware+GRUB to successfully 
    cd edk2
    git submodule update --init
    cd ..
-   git clone https://github.com/tianocore/edk2-platforms.git
-   cd edk2-platforms
+   git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
+   cd edk2-platforms-UpXtreme
    git submodule update --init
    cd ..
    git clone https://github.com/tianocore/edk2-non-osi.git
-   export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi
+   export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-non-osi
    ```
 
 3. Build

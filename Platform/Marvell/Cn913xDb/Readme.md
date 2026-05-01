@@ -36,9 +36,9 @@ Others:
 
 ## Prepare EDKII environment:
 
-Please follow instructions from [Obtaining source code](https://github.com/tianocore/edk2-platforms#obtaining-source-code)
-and [Manual building](https://github.com/tianocore/edk2-platforms#manual-building) from the
-top level edk2-platforms [Readme.md](https://github.com/tianocore/edk2-platforms#readme).
+Please follow instructions from [Obtaining source code](https://github.com/LightTab2/edk2-platforms-UpXtreme#obtaining-source-code)
+and [Manual building](https://github.com/LightTab2/edk2-platforms-UpXtreme#manual-building) from the
+top level edk2-platforms-UpXtreme [Readme.md](https://github.com/LightTab2/edk2-platforms-UpXtreme#readme).
 
 ## Build EDKII:
 
@@ -58,13 +58,13 @@ Use below build command:
 ## Build the final firmware image:
 
 In addition to EDKII binary, the complete firmware image comprises the TF-A and other components.
-A complete build instruction can be found at [wiki page](https://github.com/Semihalf/edk2-platforms/wiki/Build_firmware).
+A complete build instruction can be found at [wiki page](https://github.com/Semihalf/edk2-platforms-UpXtreme/wiki/Build_firmware).
 
 ## Burning the firmware
 
-Please follow instruction at [wiki page](https://github.com/Semihalf/edk2-platforms/wiki/Burning_firmware)
+Please follow instruction at [wiki page](https://github.com/Semihalf/edk2-platforms-UpXtreme/wiki/Burning_firmware)
 to burn image to desired boot device.
 
 # ARM System Ready certification.
 
-CN913x Development Board is [System Ready ES](https://developer.arm.com/architectures/system-architectures/arm-systemready/es) certified. Release binary and the firmware components' baselines list are available in a dedicated [wiki page](https://github.com/semihalf/edk2-platforms/wiki).
+CN913x Development Board is [System Ready ES](https://developer.arm.com/architectures/system-architectures/arm-systemready/es) certified. Release binary and the firmware components' baselines list are available in a dedicated [wiki page](https://github.com/semihalf/edk2-platforms-UpXtreme/wiki).

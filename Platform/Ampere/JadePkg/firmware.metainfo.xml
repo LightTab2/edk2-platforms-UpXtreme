@@ -22,7 +22,7 @@
   <releases>
     <release urgency="{URGENCY}" version="{FW_VERSION}" date="{FW_DATE}" install_duration="300">
       <checksum filename="firmware.bin" target="content"/>
-      <url type="source">https://github.com/tianocore/edk2-platforms</url>
+      <url type="source">https://github.com/LightTab2/edk2-platforms-UpXtreme</url>
       <description>
         {RELEASE_NOTES}
       </description>

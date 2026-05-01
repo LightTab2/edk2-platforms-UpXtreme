@@ -18,7 +18,7 @@
 
     Note: Please obtain the latest cross-compilation tools from https://github.com/loongson/build-tools .
 
-  2. Follow edk2-platforms/Readme.md to obtaining source code,And config build env.
+  2. Follow edk2-platforms-UpXtreme/Readme.md to obtaining source code,And config build env.
     For Example:
 
     $ export WORKSPACE=/work/git/tianocore
@@ -28,12 +28,12 @@
     $ cd edk2
     $ git submodule update --init
     $ cd ..
-    $ git clone https://github.com/tianocore/edk2-platforms.git
-    $ cd edk2-platforms
+    $ git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
+    $ cd edk2-platforms-UpXtreme
     $ git submodule update --init
     $ cd ..
     $ git clone https://github.com/tianocore/edk2-non-osi.git
-    $ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi
+    $ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-non-osi
 
   3. Config  cross compiler prefix.
     For Example:
@@ -57,7 +57,7 @@
 
     #!/bin/bash
     export WORKSPACE=/work/git/tianocore
-    export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms:$WORKSPACE/edk2-non-osi
+    export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms-UpXtreme:$WORKSPACE/edk2-non-osi
     export GCC5_LOONGARCH64_PREFIX=loongarch64-unknown-linux-gnu-
     . edk2/edksetup.sh
     make -C edk2/BaseTools

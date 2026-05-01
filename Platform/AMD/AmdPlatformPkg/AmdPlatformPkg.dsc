@@ -23,7 +23,7 @@
 
 !include MdePkg/MdeLibs.dsc.inc
 
-# Include AGESA module for edk2-platforms
+# Include AGESA module for edk2-platforms-UpXtreme
 !include AgesaModulePkg/AgesaEdk2PlatformPkg.inc.dsc
 
 [LibraryClasses.Common]

@@ -58,7 +58,7 @@ if [ -z "${USE_EXISTING_SB_KEYS}" ]; then
     fi
 
     if [ ! -f "${OPENSSL_CNF_FILE}" ]; then
-      cp -vf "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/${OPENSSL_CNF_FILE}" .
+      cp -vf "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/${OPENSSL_CNF_FILE}" .
     fi
 
     rm -f openssl.cnf || true
@@ -111,7 +111,7 @@ if [ -z "${USE_EXISTING_SB_KEYS}" ]; then
       -k keys/platform_key.priv -c certs/platform_key.pem dbb /dev/null certs/del_dbbkey.auth
 fi
 
-python3 ${WORKSPACE}/edk2/BaseTools/Scripts/BinToPcd.py -i certs/root.der -p gEfiSecurityPkgTokenSpaceGuid.PcdPkcs7CertBuffer -o ${WORKSPACE}/edk2-platforms/Platform/${MANUFACTURER}/${BOARD_NAME}Pkg/root.cer.gEfiSecurityPkgTokenSpaceGuid.PcdPkcs7CertBuffer.inc
+python3 ${WORKSPACE}/edk2/BaseTools/Scripts/BinToPcd.py -i certs/root.der -p gEfiSecurityPkgTokenSpaceGuid.PcdPkcs7CertBuffer -o ${WORKSPACE}/edk2-platforms-UpXtreme/Platform/${MANUFACTURER}/${BOARD_NAME}Pkg/root.cer.gEfiSecurityPkgTokenSpaceGuid.PcdPkcs7CertBuffer.inc
 
 pushd certs
 if [ ! -f "ms_kek1.der" ] || [ -n "${DOWNLOAD_MS_SB_KEYS}" ]; then

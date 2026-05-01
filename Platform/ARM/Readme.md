@@ -1,6 +1,6 @@
 # Introduction
 
-These instructions explain how to get an edk2/edk2-platforms build running
+These instructions explain how to get an edk2/edk2-platforms-UpXtreme build running
 on the Arm Base FVP and a Juno. The Arm Base FVP is a software model provided by ARM (for free)
 , which models a Cortex A core with various peripherals. More information
 can be found [here](https://developer.arm.com/products/system-design/fixed-virtual-platforms).
@@ -43,7 +43,7 @@ In the terminal window, change directory to your workspace ('source') folder and
 
 ```
 git clone https://github.com/tianocore/edk2.git
-git clone https://github.com/tianocore/edk2-platforms.git
+git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
 git clone https://github.com/acpica/acpica.git
 ```
 
@@ -130,7 +130,7 @@ $ make -C $WORKSPACE/acpica
 
 ```
 $ export GCC_AARCH64_PREFIX=$WORKSPACE/toolchain/arm-gnu-toolchain-12.2.rel1-x86_64-aarch64-none-elf/bin/aarch64-none-elf-
-$ export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms
+$ export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms-UpXtreme
 $ export IASL_PREFIX=$WORKSPACE/acpica/generate/unix/bin/
 $ export PYTHON_COMMAND=/usr/bin/python3
 ```
@@ -269,7 +269,7 @@ rem And CMD.EXE fails to find the DOS echo command because of the quotes
 
 ```
  set GCC_AARCH64_PREFIX=%WORKSPACE%\toolchain\arm-gnu-toolchain-12.2.rel1-mingw-w64-i686-aarch64-none-elf\bin\aarch64-none-elf-
- set PACKAGES_PATH=%WORKSPACE%\edk2;%WORKSPACE%\edk2-platforms
+ set PACKAGES_PATH=%WORKSPACE%\edk2;%WORKSPACE%\edk2-platforms-UpXtreme
  set EDK_TOOLS_PATH=%WORKSPACE%\edk2\BaseTools
  set GCC_HOST_BIN=n
 ```

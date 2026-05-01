@@ -4,10 +4,10 @@ If any platform or driver is failing to build against current edk2 and (if
 applicable) [edk2-non-osi](https://github.com/tianocore/edk2-non-osi), please
 raise a github issue.
 
-For generic information about the edk2-platforms repository, and the process
+For generic information about the edk2-platforms-UpXtreme repository, and the process
 under which _stable_ and _devel_ branches can be added for individual platforms,
 please see
-[the introduction on the about branch](https://github.com/tianocore/edk2-platforms/blob/about/Readme.md).
+[the introduction on the about branch](https://github.com/LightTab2/edk2-platforms-UpXtreme/blob/about/Readme.md).
 
 The majority of the content in the EDK II open source project uses a
 [BSD-2-Clause Plus Patent License](License.txt).  Additional details on EDK II
@@ -51,7 +51,7 @@ EDK II Platforms
 ----------------
 W: https://github.com/tianocore/tianocore.github.io/wiki/EDK-II
 L: https://edk2.groups.io/g/devel/
-T: git - https://github.com/tianocore/edk2-platforms.git
+T: git - https://github.com/LightTab2/edk2-platforms-UpXtreme.git
 
 Responsible Disclosure, Reporting Security Issues
 -------------------------------------------------
@@ -113,14 +113,14 @@ target-specific binutils. These are included with any prepackaged GCC toolchain
 
 1. Into that folder, clone:
    1. [edk2](https://github.com/tianocore/edk2)
-   1. [edk2-platforms](https://github.com/tianocore/edk2-platforms)
+   1. [edk2-platforms-UpXtreme](https://github.com/LightTab2/edk2-platforms-UpXtreme)
    1. [edk2-non-osi](https://github.com/tianocore/edk2-non-osi) (if building
       platforms that need it)
    ```
    $ git clone https://github.com/tianocore/edk2.git
    $ git submodule update --init
    ...
-   $ git clone https://github.com/tianocore/edk2-platforms.git
+   $ git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
    $ git submodule update --init
    ...
    $ git clone https://github.com/tianocore/edk2-non-osi.git
@@ -129,7 +129,7 @@ target-specific binutils. These are included with any prepackaged GCC toolchain
 1. Set up a **PACKAGES_PATH** to point to the locations of these three
    repositories:
 
-   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi`
+   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-non-osi`
 
 ## Manual building
 
@@ -189,7 +189,7 @@ to platform description files in a separate configuration file. Additionally,
 they simplify bulk-building large numbers of platforms.
 
 The (best effort) intent is to keep this configuration up to date with all
-platforms that exist in the edk2-platforms master branch.
+platforms that exist in the edk2-platforms-UpXtreme master branch.
 
 The equivalent of the manual example above would be
 ```
@@ -232,8 +232,8 @@ as possible as we can. Currently EDK II Platforms contains no submodules.
 To get a full, buildable EDK II repository, use following steps of git command
 
 ```bash
-  git clone https://github.com/tianocore/edk2-platforms.git
-  cd edk2-platforms
+  git clone https://github.com/LightTab2/edk2-platforms-UpXtreme 
+  cd edk2-platforms-UpXtreme
   git submodule update --init
   cd ..
 ```
@@ -242,7 +242,7 @@ If there's update for submodules, use following git commands to get the latest
 submodules code.
 
 ```bash
-  cd edk2-platforms
+  cd edk2-platforms-UpXtreme
   git pull
   git submodule update
 ```

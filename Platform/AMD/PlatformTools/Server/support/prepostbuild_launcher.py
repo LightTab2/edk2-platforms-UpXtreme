@@ -60,7 +60,7 @@ def main():
             edk2Workspace = os.environ.get(workspace)
             prePostScriptPath = os.path.join (
                     edk2Workspace,
-                    "edk2-platforms",
+                    "edk2-platforms-UpXtreme",
                     "Platform",
                     "AMD",
                     "PlatformTools",

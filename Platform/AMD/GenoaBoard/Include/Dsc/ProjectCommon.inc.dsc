@@ -338,7 +338,7 @@
 
   !if $(USE_EMULATED_VARIABLE_STORE) == TRUE
     # these modules are included in MinPlatformPkg in
-    # edk2-platforms\Platform\Intel\MinPlatformPkg\Include\Dsc\CoreDxeInclude.dsc
+    # edk2-platforms-UpXtreme\Platform\Intel\MinPlatformPkg\Include\Dsc\CoreDxeInclude.dsc
     # removing these modules being loaded by adding depex condition which is
     # always false
     MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmm.inf {

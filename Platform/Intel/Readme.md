@@ -10,7 +10,7 @@ Package maintainers for the Minimum Platform projects are listed in Maintainers.
 ## Overview
 The key elements of the architecture are organized into a staged boot approach where each stage has requirements and
 functionality for specific use cases. The generic control flow through the boot process is implemented in the
-[`MinPlatformPkg`](https://github.com/tianocore/edk2-platforms/tree/master/Platform/Intel/MinPlatformPkg).
+[`MinPlatformPkg`](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Platform/Intel/MinPlatformPkg).
 The generic nature of the tasks performed in MinPlatformPkg lends to reuse across all Intel platforms with no
 source modification. Details for any particular board are made accessible to the MinPlatformPkg through a well-defined
 statically linked board API. A complete platform solution then consists of the MinPlatformPkg and a compatible board
@@ -18,13 +18,13 @@ package.
 
 ## Board Naming Convention
 The board packages supported by Intel follow the naming convention \<xxx\>OpenBoardPkg where xxx refers to the
-encompassing platform name for a particular platform generation. For example, the [`KabylakeOpenBoardPkg`](https://github.com/tianocore/edk2-platforms/tree/master/Platform/Intel/KabylakeOpenBoardPkg) contains the
+encompassing platform name for a particular platform generation. For example, the [`KabylakeOpenBoardPkg`](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Platform/Intel/KabylakeOpenBoardPkg) contains the
 board code for Intel KabyLake reference systems. Intel uses the moniker "OpenBoardPkg" to indicate that this package
 is the open source board code. A closed source counterpart may exist which simply uses "BoardPkg". Both directly use
-the MinPlatformPkg from edk2-platforms.
+the MinPlatformPkg from edk2-platforms-UpXtreme.
 
 ## Stage Selection
-Stage selection is controlled via the PCD `gMinPlatformPkgTokenSpaceGuid.PcdBootStage` in [`MinPlatformPkg.dec`](https://github.com/tianocore/edk2-platforms/tree/master/Platform/Intel/MinPlatformPkg/MinPlatformPkg.dec).
+Stage selection is controlled via the PCD `gMinPlatformPkgTokenSpaceGuid.PcdBootStage` in [`MinPlatformPkg.dec`](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Platform/Intel/MinPlatformPkg/MinPlatformPkg.dec).
 The stage should be configured in the board package DSC file to the appropriate value. For example, a board may disable
 all advanced features by setting this value to 4 instead of 6. This may be used to improve boot time for a particular
 use case. Decrementing the stage can also be used for debug since only the actions required for that stage objective
@@ -48,8 +48,8 @@ A UEFI firmware implementation using MinPlatformPkg is constructed using the fol
 |------------------------------------|
 | [EDK II](https://github.com/tianocore/edk2)                                                                              |
 | [Intel(r) FSP](https://github.com/intel/FSP)                                                                            |
-| [Minimum Platform (`MinPlatformPkg`)](https://github.com/tianocore/edk2-platforms/tree/master/Platform/Intel/MinPlatformPkg)                        |
-| [Board Support (\<xxx\>OpenBoardPkg)](https://github.com/tianocore/edk2-platforms/tree/master/Platform/Intel)  |
+| [Minimum Platform (`MinPlatformPkg`)](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Platform/Intel/MinPlatformPkg)                        |
+| [Board Support (\<xxx\>OpenBoardPkg)](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Platform/Intel)  |
 
 
 ## Board Support
@@ -78,7 +78,7 @@ A UEFI firmware implementation using MinPlatformPkg is constructed using the fol
 The board package follows the standard EDK II package structure with the following additional elements and guidelines:
 * Only code usable across more than one board at the root level.
 * Board-specific code in a directory. The directory name should match that of the board supported.
-* Features not essential to achieve stage 5 or earlier boots are maintained in edk2-platforms/Features/Intel.
+* Features not essential to achieve stage 5 or earlier boots are maintained in edk2-platforms-UpXtreme/Features/Intel.
 
 Shared resources in the package root directory can include interfaces described in header files, library instances,
 firmware modules, binaries, etc. The UEFI firmware implementation is built using the process described below from the
@@ -121,8 +121,8 @@ return back to the minimum platform caller.
 * edk2 repository
   * ``git clone https://github.com/tianocore/edk2.git``
 
-* edk2-platforms repository
-  * ``git clone https://github.com/tianocore/edk2-platforms.git``
+* edk2-platforms-UpXtreme repository
+  * ``git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git``
 
 * edk2-non-osi repository
   * ``git clone https://github.com/tianocore/edk2-non-osi.git``
@@ -139,7 +139,7 @@ return back to the minimum platform caller.
    * Type "cd edk2"
    * Type "source edksetup.sh"
    * Type "cd ../" to go back to the workspace directory
-3. Type "cd edk2-platforms/Platform/Intel
+3. Type "cd edk2-platforms-UpXtreme/Platform/Intel
 4. Type "python build_bios.py -p REPLACE_WITH_BOARD_NAME"
 
 * build_bios.py arguments:
@@ -185,18 +185,18 @@ return back to the minimum platform caller.
   * See [known limitations](#Known-limitations)
 
 * Configuration Files
-  * The edk2-platforms\Platform\Intel\build.cfg file contains the default settings used by build_bios.py
+  * The edk2-platforms-UpXtreme\Platform\Intel\build.cfg file contains the default settings used by build_bios.py
   * The default settings are under the DEFAULT_CONFIG section
-  * Each board can have a settings file that will override the edk2-platforms\Platform\Intel\build.cfg settings
+  * Each board can have a settings file that will override the edk2-platforms-UpXtreme\Platform\Intel\build.cfg settings
   * An example of a board specific settings:
-    * edk2-platforms\Platform\Intel\KabylakeOpenBoardPkg\KabylakeRvp3\build_config.cfg
+    * edk2-platforms-UpXtreme\Platform\Intel\KabylakeOpenBoardPkg\KabylakeRvp3\build_config.cfg
 
 * Workspace view of the build scripts
   * <pre>
     WORKSPACE
           |------edk2
           |------edk2-non-osi
-          |------edk2-platforms
+          |------edk2-platforms-UpXtreme
           |       |---Platform
           |       |    |--Intel
           |       |        |------build.cfg: Default build settings. These are overridden by
@@ -239,10 +239,10 @@ packages. To test the build of the whole package, the "build" command should be 
 
 1. Execute edksetup.bat (Windows) or edksetup.sh (Linux).
 2. Verify the "WORKSPACE" environment variable is set to the edk2 directory in your workspace.
-3. Set the "PACKAGES_PATH" environment variable to include the edk2-platforms/Platform/Intel, edk2-platforms/Silicon/Intel,
-   and edk2-platforms/Features/Intel directories.
-   * Windows example: set PACKAGES_PATH=c:\Edk2Workspace\edk2-platforms\Platform\Intel;
-     c:\Edk2Workspace\edk2-platforms\Silicon\Intel;c:\Edk2Workspace\edk2-platforms\Features\Intel
+3. Set the "PACKAGES_PATH" environment variable to include the edk2-platforms-UpXtreme/Platform/Intel, edk2-platforms-UpXtreme/Silicon/Intel,
+   and edk2-platforms-UpXtreme/Features/Intel directories.
+   * Windows example: set PACKAGES_PATH=c:\Edk2Workspace\edk2-platforms-UpXtreme\Platform\Intel;
+     c:\Edk2Workspace\edk2-platforms-UpXtreme\Silicon\Intel;c:\Edk2Workspace\edk2-platforms-UpXtreme\Features\Intel
 4. Build the package by specifying the package DSC as the platform build target from the Platform/Intel or Silicon/Intel directory:
    "build -p BoardModulePkg/BoardModulePkg.dsc -a IA32 -a X64"
 

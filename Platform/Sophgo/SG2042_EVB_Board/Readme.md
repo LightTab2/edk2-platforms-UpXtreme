@@ -20,7 +20,7 @@ Sophgo SG2042 UEFI can currently use Opensbi+UEFI firmware+GRUB to successfully 
      sudo apt-get install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build uuide-dev
      ```
 
-3. Follow edk2-platforms/Readme.md to obtaining source code, and config build env. For Example:
+3. Follow edk2-platforms-UpXtreme/Readme.md to obtaining source code, and config build env. For Example:
 
    ```
    export WORKSPACE=/work/git/tianocore
@@ -30,12 +30,12 @@ Sophgo SG2042 UEFI can currently use Opensbi+UEFI firmware+GRUB to successfully 
    cd edk2
    git submodule update --init
    cd ..
-   git clone https://github.com/tianocore/edk2-platforms.git
-   cd edk2-platforms
+   git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
+   cd edk2-platforms-UpXtreme
    git submodule update --init
    cd ..
    git clone https://github.com/tianocore/edk2-non-osi.git
-   export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi
+   export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-non-osi
    ```
 
 4. Build
@@ -85,7 +85,7 @@ Sophgo SG2042 UEFI can currently use Opensbi+UEFI firmware+GRUB to successfully 
 
 ## Platform Status ##
 **SG2042_EVB_Board** Currently the binary built from SG2042 edk2 package can boot Sophgo SG2042 EVB to EFI shell with console, boot the operating system using GRUB2 into the Linux operating system for execution. Please refer to
-https://github.com/AII-SDU/edk2-platforms/blob/devel-Sophgo/SG2042Pkg/Platform/Sophgo/About_Sophgo_platform.md for the boot process.
+https://github.com/AII-SDU/edk2-platforms-UpXtreme/blob/devel-Sophgo/SG2042Pkg/Platform/Sophgo/About_Sophgo_platform.md for the boot process.
 
 ## Supported Operating Systems
 The preliminary running test of the following operating systems has been completed on the EVB test board, and the desktop environment has been deployed.

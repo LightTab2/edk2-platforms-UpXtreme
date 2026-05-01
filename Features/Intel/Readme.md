@@ -3,7 +3,7 @@
 In the EDK II Minimum Platform, advanced features are non-essential features. Essential features are those required
 to achieve an earlier boot stage (Stage I through Stage V). The Minimum Platform boot stages are defined in the
 [EDK II Minimum Platform Draft Specification](https://edk2-docs.gitbooks.io/edk-ii-minimum-platform-specification/). A
-brief overview is also provided in the [Platform/Intel/Readme.md](https://github.com/tianocore/edk2-platforms/blob/master/Platform/Intel/Readme.md).
+brief overview is also provided in the [Platform/Intel/Readme.md](https://github.com/LightTab2/edk2-platforms-UpXtreme/blob/master/Platform/Intel/Readme.md).
 
 An advanced feature must be implemented as highly cohesive and stand-alone software to only support a specific
 feature. Advanced features are the primary method to extend platform firmware capabilities in a modular fashion.
@@ -20,7 +20,7 @@ Advanced features should be:
 * _Complete_, the feature must have a complete design that minimizes dependencies. A feature package can only depend
   on following packages:
   * edk2 repo: `MdePkg`, `MdeModulePkg`, `UefiCpuPkg`, `FmpDevicePkg`, `SecurityPkg`, `NetworkPkg`, `ShellPkg`.
-  * edk2-platforms repo: `MinPlatformPkg`, `IntelSiliconPkg`.
+  * edk2-platforms-UpXtreme repo: `MinPlatformPkg`, `IntelSiliconPkg`.
 * _Easy to Integrate_, the feature should expose well-defined software interfaces to use and configure the feature.
   * It should also present a set of simple and well-documented standard EDK II configuration options such as PCDs to
   configure the feature.
@@ -96,10 +96,10 @@ Each feature is maintained in its own feature package called `XxxFeaturePkg` whe
 name.
 
 ### Source Code Organization of Advanced Features
-All advanced feature code is maintained in `edk2-platforms/Features`. Features that are only tested on Intel systems
-are maintained in `edk2-platforms/Features/Intel`. These features are not intended to be constrained to Intel systems.
+All advanced feature code is maintained in `edk2-platforms-UpXtreme/Features`. Features that are only tested on Intel systems
+are maintained in `edk2-platforms-UpXtreme/Features/Intel`. These features are not intended to be constrained to Intel systems.
 
-A package resides at the root of `edk2-platforms/Features/Intel` called [AdvancedFeaturePkg](#AdvancedFeaturePkg).
+A package resides at the root of `edk2-platforms-UpXtreme/Features/Intel` called [AdvancedFeaturePkg](#AdvancedFeaturePkg).
 All feature packages are organized into directories by feature domain. Each feature domain directory is required to
 have a `Readme.md` that explains the scope of features for that domain. Each feature package is required to have a
 `Readme.md` that explain the feature. All feature packages are required to base their `Readme.md` on the
@@ -112,7 +112,7 @@ of course, are subject to change over time.
     WORKSPACE
           |------edk2
           |------edk2-non-osi
-          |------edk2-platforms
+          |------edk2-platforms-UpXtreme
           |       |---Features
           |       |    |--Intel
           |       |        |------AdvancedFeaturePkg
@@ -206,35 +206,35 @@ At a minimum, an advanced feature must consist of the following elements:
 
 9. Build the advanced feature package to ensure the build is successful:
     From the workspace root:
-    1. Verify the "WORKSPACE" environment variable is set to the parent of edk2 and edk2-platforms directory in your
+    1. Verify the "WORKSPACE" environment variable is set to the parent of edk2 and edk2-platforms-UpXtreme directory in your
        workspace.
-    2. Set the "PACKAGES_PATH" environment variable to include the edk2, edk2-platforms/Platform/Intel,
-       edk2-platforms/Silicon/Intel, and edk2-platforms/Features/Intel directories.
+    2. Set the "PACKAGES_PATH" environment variable to include the edk2, edk2-platforms-UpXtreme/Platform/Intel,
+       edk2-platforms-UpXtreme/Silicon/Intel, and edk2-platforms-UpXtreme/Features/Intel directories.
        * Windows example:
          * set PACKAGES_PATH=%WORKSPACE%\edk2;
-                             %WORKSPACE%\edk2-platforms\Platform\Intel;
-                             %WORKSPACE%\edk2-platforms\Silicon\Intel;
-                             %WORKSPACE%\edk2-platforms\Features\Intel;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\Debugging;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\Network;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\OutOfBandManagement;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\PowerManagement;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\SystemInformation;
-                             %WORKSPACE%\edk2-platforms\Features\Intel\UserInterface
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Platform\Intel;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Silicon\Intel;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\Debugging;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\Network;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\OutOfBandManagement;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\PowerManagement;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\SystemInformation;
+                             %WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel\UserInterface
        * Linux example:
          * export PACKAGES_PATH=~Edk2Workspace/edk2:
-                                ~/Edk2Workspace/edk2-platforms/Platform/Intel:
-                                ~/Edk2Workspace/edk2-platforms/Silicon/Intel:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/Debugging:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/Network:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/OutOfBandManagement:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/PowerManagement:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/SystemInformation:
-                                ~/Edk2Workspace/edk2-platforms/Features/Intel/UserInterface
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Platform/Intel:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Silicon/Intel:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/Debugging:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/Network:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/OutOfBandManagement:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/PowerManagement:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/SystemInformation:
+                                ~/Edk2Workspace/edk2-platforms-UpXtreme/Features/Intel/UserInterface
     3. cd edk2
     4. Execute edksetup.bat (Windows) or edksetup.sh (Linux).
-    5. cd edk2-platforms/Features/Intel
+    5. cd edk2-platforms-UpXtreme/Features/Intel
     6. <pre>build -a IA32 -a X64 -p FeatureDomainDirectory/XxxFeaturePkg/XxxFeaturePkg.dsc</pre>
        *Note:* -a specifies the architecture. Typically IA32 and X64 modules are built for 32-bit PEI and 64-bit
        DXE though build for your specific requirements.

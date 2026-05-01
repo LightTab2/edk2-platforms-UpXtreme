@@ -38,7 +38,7 @@ following __major__ limitations:
 
 # Building
 
-Build instructions from the top level edk2-platforms Readme.md apply.
+Build instructions from the top level edk2-platforms-UpXtreme Readme.md apply.
 
 # Booting the firmware
 

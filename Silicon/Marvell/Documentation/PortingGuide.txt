@@ -7,14 +7,14 @@ board. For the sake of simplicity new Marvell board will be called "new_board".
 1. Create configuration files for new target
         1.1 Create FDF file for new board
 
-         - Copy and rename edk2-platforms/Platform/Marvell/Armada/Armada70x0.fdf to
-           edk2-platforms/Platform/Marvell/Armada/new_board.fdf
+         - Copy and rename edk2-platforms-UpXtreme/Platform/Marvell/Armada/Armada70x0.fdf to
+           edk2-platforms-UpXtreme/Platform/Marvell/Armada/new_board.fdf
          - Change the first no-comment line:
            [FD.Armada70x0_EFI] to [FD.{new_board}_EFI]
 
         1.2 Create DSC file for new board
 
-         - Add new_board.dsc file to edk2-platforms/Platform/Marvell/Armada directory
+         - Add new_board.dsc file to edk2-platforms-UpXtreme/Platform/Marvell/Armada directory
          - Insert following [Defines] section to new_board.dsc:
 
                         [Defines]
@@ -32,11 +32,11 @@ board. For the sake of simplicity new Marvell board will be called "new_board".
 
 2. Driver support
  - According to content of files from
-   edk2-platforms/Silicon/Marvell/Documentation/PortingGuide.txt
+   edk2-platforms-UpXtreme/Silicon/Marvell/Documentation/PortingGuide.txt
    insert PCD entries into new_board.dsc for every needed interface (as listed below).
 
 3. Compilation
- - Refer to edk2-platforms/Platform/Marvell/Readme.md. Remember to change
+ - Refer to edk2-platforms-UpXtreme/Platform/Marvell/Readme.md. Remember to change
    {platform} to new_board in order to point build system to newly created DSC file.
 
 4. Output file
@@ -46,7 +46,7 @@ board. For the sake of simplicity new Marvell board will be called "new_board".
 5. ACPI support (optional)
  - The tables can be enabled as in A70x0Db example:
 
-     <path to edk2-platforms>/Platforms/Marvell/Armada/AcpiTables/Armada70x0Db/
+     <path to edk2-platforms-UpXtreme>/Platforms/Marvell/Armada/AcpiTables/Armada70x0Db/
 
  - Enable compilation of the tables in the board's .dsc file. Add it to the
    output flash image contents via .fdf.inc file - path to it defined as
@@ -190,9 +190,9 @@ I2C configuration
 =================
 In order to enable driver on a new platform, following steps need to be taken:
  - add following line to .dsc file:
-   edk2-platforms/Platform/Marvell/Drivers/I2c/MvI2cDxe/MvI2cDxe.inf
+   edk2-platforms-UpXtreme/Platform/Marvell/Drivers/I2c/MvI2cDxe/MvI2cDxe.inf
  - add following line to .fdf file:
-   INF edk2-platforms/Platform/Marvell/Drivers/I2c/MvI2cDxe/MvI2cDxe.inf
+   INF edk2-platforms-UpXtreme/Platform/Marvell/Drivers/I2c/MvI2cDxe/MvI2cDxe.inf
  - add PCDs with relevant values to .dsc file:
         - gMarvellSiliconTokenSpaceGuid.PcdI2cSlaveAddresses|{ 0x50, 0x57 }
                 (addresses of I2C slave devices on bus)
@@ -337,7 +337,7 @@ Folowing PCDs for spi flash driver configuration must be set properly:
 
   - gMarvellSiliconTokenSpaceGuid.PcdSpiFlashMode
         (Default SCLK mode (see SPI_MODE enum in file
-         edk2-platforms/Platform/Marvell/Drivers/Spi/MvSpi.h))
+         edk2-platforms-UpXtreme/Platform/Marvell/Drivers/Spi/MvSpi.h))
 
   - gMarvellSiliconTokenSpaceGuid.PcdSpiFlashCs
         (Chip select used for communication with the Flash)
@@ -346,7 +346,7 @@ MPP configuration
 =================
 Multi-Purpose Ports (MPP) are configurable through platform PCDs.
 In order to set desired pin multiplexing, .dsc file needs to be modified.
-(edk2-platforms/Platform/Marvell/Armada/{platform_name}.dsc - please refer to
+(edk2-platforms-UpXtreme/Platform/Marvell/Armada/{platform_name}.dsc - please refer to
 Documentation/Build.txt for currently supported {platftorm_name} )
 Following PCDs are available:
 

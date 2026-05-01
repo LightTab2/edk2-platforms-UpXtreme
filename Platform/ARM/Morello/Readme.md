@@ -23,11 +23,11 @@ Morello FVP can be downloaded from this [location](https://developer.arm.com/too
 # Supported Host and Toolchain
 
 - Host PC should be running Ubuntu Linux 24.04 LTS.
-- Please refer to the `edk2-platforms/Readme.md` for downloading the GCC or Clang toolchain.
+- Please refer to the `edk2-platforms-UpXtreme/Readme.md` for downloading the GCC or Clang toolchain.
 
 # Build Instructions
 
-Please refer to the `edk2-platforms/Readme.md` for build instructions.
+Please refer to the `edk2-platforms-UpXtreme/Readme.md` for build instructions.
 
 # Dependencies
 

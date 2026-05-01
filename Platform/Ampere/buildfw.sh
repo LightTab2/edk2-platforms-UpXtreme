@@ -204,12 +204,12 @@ done
 
 eval set -- ""
 
-BOARD_SETTINGS_CFG=edk2-platforms/Platform/${MANUFACTURER}/${BOARD_NAME}Pkg/${BOARD_NAME}BoardSetting.cfg
+BOARD_SETTINGS_CFG=edk2-platforms-UpXtreme/Platform/${MANUFACTURER}/${BOARD_NAME}Pkg/${BOARD_NAME}BoardSetting.cfg
 OUTPUT_BIN_DIR=$PWD/Build/${BOARD_NAME}
 EDK2_BUILD_DIR=$PWD/Build/${BOARD_NAME}
 OUTPUT_BOARD_SETTINGS_BIN=${OUTPUT_BIN_DIR}/$(basename ${BOARD_SETTINGS_CFG}).bin
 
-export PACKAGES_PATH=$PWD:$PWD/edk2:$PWD/edk2-non-osi:$PWD/edk2-platforms:$PWD/edk2-platforms/Features/Intel/Debugging:$PWD/edk2-platforms/Features:$PWD/edk2-platforms/Features/Intel
+export PACKAGES_PATH=$PWD:$PWD/edk2:$PWD/edk2-non-osi:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-platforms-UpXtreme/Features/Intel/Debugging:$PWD/edk2-platforms-UpXtreme/Features:$PWD/edk2-platforms-UpXtreme/Features/Intel
 
 case $(uname -m) in
   "x86_64")
@@ -240,7 +240,7 @@ rm -fv "${OUTPUT_BOARD_SETTINGS_BIN}.padded"
 
 ${MAKE_COMMAND} -C edk2/BaseTools -j ${BUILD_THREADS}
 
-. "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/fw_ver.sh" UPDATE
+. "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/fw_ver.sh" UPDATE
 . edk2/edksetup.sh
 
 if [ -e "${WORKSPACE}/build.conf" ]; then
@@ -249,7 +249,7 @@ fi
 
 pushd edk2
 cp -vf BaseTools/Conf/tools_def.template Conf/tools_def.txt
-patch -p0 < "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/tools_def.txt.patch"
+patch -p0 < "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/tools_def.txt.patch"
 popd
 
 if [ -z "${SECUREBOOT_DIR}" ]; then
@@ -301,7 +301,7 @@ fi
 if [ "${EDK2_SECURE_BOOT_ENABLE}" = "TRUE" ]; then
   export MANUFACTURER
   export BOARD_NAME
-  "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/GenerateSecureBootKeys.sh"
+  "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/GenerateSecureBootKeys.sh"
 
   EXTRA_BUILD_FLAGS+=" -D DEFAULT_KEYS=TRUE"
   EXTRA_BUILD_FLAGS+=" -D PK_DEFAULT_FILE=${SECUREBOOT_DIR}/certs/platform_key.der"
@@ -457,7 +457,7 @@ fi
 if [ "${BOARD_NAME}" = "ComHpcAlt" ] && [ ! -e "${WORKSPACE}/${UPD720202_ROM_FILE}" ]; then
   echo "Warning: the Renesas UPD720202 USB3 Controller firmware file ${WORKSPACE}/${UPD720202_ROM_FILE} was not found."
   echo "The firmware was built without the firmware. The USB3 controller will not work unless the firmware is loaded in the OS."
-  echo "See edk2-platforms/Drivers/OptionRomPkg/RenesasFirmwarePD720202/README.md for details on how to obtain it."
+  echo "See edk2-platforms-UpXtreme/Drivers/OptionRomPkg/RenesasFirmwarePD720202/README.md for details on how to obtain it."
   exit 1
 fi
 
@@ -470,8 +470,8 @@ echo "Done. Firmware is in ${OUTPUT_BIN_DIR}/"
 if [ "${FLASHFW}" = "1" ]; then
     echo "Copying firmware to BMC and flashing host."
     if [ "$RESET_NV_STORAGE" = "1" ]; then
-        "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/fwflash.sh" -f "${OUTPUT_SPINOR_IMAGE}"
+        "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/fwflash.sh" -f "${OUTPUT_SPINOR_IMAGE}"
     else
-        "${WORKSPACE}/edk2-platforms/Platform/Ampere/Tools/fwflash.sh" -u "${OUTPUT_UEFI_IMAGE}"
+        "${WORKSPACE}/edk2-platforms-UpXtreme/Platform/Ampere/Tools/fwflash.sh" -u "${OUTPUT_UEFI_IMAGE}"
     fi
 fi

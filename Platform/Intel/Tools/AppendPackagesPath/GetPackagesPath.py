@@ -24,8 +24,8 @@ def __get_packages_path(root):
            a directory that contains an EDK II package declaration (DEC) file.
         3. it contains at least one first level EDK II Package.
         Note: A directory is not package path but its subdirectory could be.
-        Example: edk2-platforms/Features is not package path
-        but edk2-platforms/Features/Intel is.
+        Example: edk2-platforms-UpXtreme/Features is not package path
+        but edk2-platforms-UpXtreme/Features/Intel is.
 
         :param root: The specified directory to find package paths in it,
             the caller should ensure it is an valid directory

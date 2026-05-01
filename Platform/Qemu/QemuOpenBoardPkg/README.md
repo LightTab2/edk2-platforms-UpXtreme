@@ -18,16 +18,16 @@ This project brings UEFI support to QEMU x86_64 following the MinPlatform specif
   - How to setup a local tree: https://github.com/tianocore/tianocore.github.io/wiki/Getting-Started-with-EDK-II
 
 - EDK2 Platforms
-  - https://github.com/tianocore/edk2-platforms
+  - https://github.com/LightTab2/edk2-platforms-UpXtreme
 
 - Environnements variables:
   - WORKSPACE set to your current workspace
   - PACKAGES_PATH should contain path to:
     - edk2
-    - edk2-platforms
-    - edk2-platforms/Platform/Intel
-    - edk2-platforms/Platform/Qemu
-    - edk2-platforms/Silicon/Intel
+    - edk2-platforms-UpXtreme
+    - edk2-platforms-UpXtreme/Platform/Intel
+    - edk2-platforms-UpXtreme/Platform/Qemu
+    - edk2-platforms-UpXtreme/Silicon/Intel
 
 Currently QemuOpenBoardPkg's PEI Core is 32 bits only, DXE supports either 32 bits or 64 bits
 

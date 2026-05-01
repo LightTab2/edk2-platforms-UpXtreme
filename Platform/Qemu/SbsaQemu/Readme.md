@@ -29,7 +29,7 @@ Create a directory $WORKSPACE that would hold source code of the components.
 
   1. [qemu](https://gitlab.com/qemu-project/qemu.git)
   2. [edk2](https://github.com/tianocore/edk2)
-  3. [edk2-platforms](https://github.com/tianocore/edk2-platforms)
+  3. [edk2-platforms-UpXtreme](https://github.com/LightTab2/edk2-platforms-UpXtreme)
   4. [edk2-non-osi](https://github.com/tianocore/edk2-non-osi)
   5. [tf-a](https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git)
 
@@ -78,7 +78,7 @@ Create a directory $WORKSPACE that would hold source code of the components.
 3. Compile UEFI for QEMU Sbsa platform
 
   Detailed build instructions can be found on the following link:
-  https://github.com/tianocore/edk2-platforms
+  https://github.com/LightTab2/edk2-platforms-UpXtreme
 
   Following is a short description to build for the Sbsa platform.
 
@@ -86,7 +86,7 @@ Create a directory $WORKSPACE that would hold source code of the components.
 
   ```
   cd $WORKSPACE
-  export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms:$WORKSPACE/edk2-non-osi
+  export PACKAGES_PATH=$WORKSPACE/edk2:$WORKSPACE/edk2-platforms-UpXtreme:$WORKSPACE/edk2-non-osi
   make -C edk2/BaseTools
   . edk2/edksetup.sh
   ```
@@ -95,7 +95,7 @@ Create a directory $WORKSPACE that would hold source code of the components.
 
   ```
   cd $WORKSPACE
-  build -b RELEASE -a AARCH64 -t GCC5 -p edk2-platforms/Platform/Qemu/SbsaQemu/SbsaQemu.dsc
+  build -b RELEASE -a AARCH64 -t GCC5 -p edk2-platforms-UpXtreme/Platform/Qemu/SbsaQemu/SbsaQemu.dsc
   ```
   An RME aware SBSA system can be compiled by adding `-D ENABLE_RME` to the
   command line above.  In that case `bl1.bin` and `fip.bin` also have to be RME

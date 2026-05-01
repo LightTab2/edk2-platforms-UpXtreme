@@ -27,7 +27,7 @@ can run on:
 git clone https://github.com/tianocore/edk2.git
 git submodule update --init
 cd edk2
-git clone https://github.com/tianocore/edk2-platforms.git
+git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
 ```
 
 ## Building the U540 Platform
@@ -38,7 +38,7 @@ Prerequisite: Install a RISC-V 64-bit GNU toolchain (e.g., riscv64-linux-gnu-gcc
 ```
 export WORKSPACE=$(pwd)
 export GCC5_RISCV64_PREFIX=riscv64-linux-gnu-
-export PACKAGES_PATH=$WORKSPACE:$WORKSPACE/edk2-platforms
+export PACKAGES_PATH=$WORKSPACE:$WORKSPACE/edk2-platforms-UpXtreme
 export EDK_TOOLS_PATH=$WORKSPACE/BaseTools
 
 # Set up the build environment

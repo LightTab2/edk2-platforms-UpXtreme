@@ -21,8 +21,8 @@ Ampere Altra based platforms.
 
 ```mermaid
 flowchart TD
-    edk2-platforms --> Silicon/Ampere
-    edk2-platforms --> Platform/Ampere
+    edk2-platforms-UpXtreme --> Silicon/Ampere
+    edk2-platforms-UpXtreme --> Platform/Ampere
     Silicon/Ampere --> AmpereSiliconPkg
     Silicon/Ampere --> AmpereAltraPkg
     Platform/Ampere --> JadePkg
@@ -47,7 +47,7 @@ This section describes the common process of adding a new platform based on the 
 Jade reference platform. First, construct a minimal EDK2 that can boot to UEFI Shell.
 Then, enable features one-by-one such as PCIe, ACPI, SMBIOS, etc.
 
-1. Create a vendor directory and a board directory with the pattern: `edk2-platforms/Platform/<Your Company Name>/<New Board>Pkg`.
+1. Create a vendor directory and a board directory with the pattern: `edk2-platforms-UpXtreme/Platform/<Your Company Name>/<New Board>Pkg`.
    For the sake of simplicity, the new platform will be under `Platform/Ampere/NewBoardPkg`.
 2. Copy `Platform/Ampere/JadePkg` to `Platform/Ampere/NewBoardPkg`.
 3. Rename the file name under the `NewBoardPkg` like BoardSetting.cfg and DSC/FDF file to match the platform name.

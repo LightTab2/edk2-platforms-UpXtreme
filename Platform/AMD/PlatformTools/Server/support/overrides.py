@@ -40,7 +40,7 @@ def _overrides(override=False):
         print("Restore the files overrode by " + boardName)
 
     rel_platform_dir = os.path.join (
-            "edk2-platforms",
+            "edk2-platforms-UpXtreme",
             "Platform",
             "AMD",
             boardName,

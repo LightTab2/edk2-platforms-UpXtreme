@@ -119,8 +119,8 @@ NOTE:
 
 ```
 0) Preparation
- cd {edk2-platforms}/Platform/ARM/Features/Fwu
- export OPENSSL_CONF={edk2-platforms}/Platform/ARM/Features/Fwu/TestCerts.cnf
+ cd {edk2-platforms-UpXtreme}/Platform/ARM/Features/Fwu
+ export OPENSSL_CONF={edk2-platforms-UpXtreme}/Platform/ARM/Features/Fwu/TestCerts.cnf
  mkdir -p demoCA/newcerts
  touch demoCA/index.txt
  echo 01 > demoCA/serial

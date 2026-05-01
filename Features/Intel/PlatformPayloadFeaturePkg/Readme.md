@@ -29,17 +29,17 @@ Use Windows host as example to generate a full-feature payload:
 * Setup the build env
 <pre>
 set WORKSPACE=c:\payload
-set PACKAGES_PATH=%WORKSPACE%\edk2;%WORKSPACE%\edk2-platforms\Features\Intel;%WORKSPACE%\edk2-platforms\Platform\Intel
+set PACKAGES_PATH=%WORKSPACE%\edk2;%WORKSPACE%\edk2-platforms-UpXtreme\Features\Intel;%WORKSPACE%\edk2-platforms-UpXtreme\Platform\Intel
 edk2\edksetup.bat
 </pre>
 * Build universal UEFI payload with platform payload
 <pre>
-python edk2-platforms\Features\Intel\PlatformPayloadFeaturePkg\PlatformPayloadFeaturePkg.py -t VS2019 -D SMM_SUPPORT=TRUE -DVARIABLE_SUPPORT=NONE -D SMM_VARIABLE=TRUE
+python edk2-platforms-UpXtreme\Features\Intel\PlatformPayloadFeaturePkg\PlatformPayloadFeaturePkg.py -t VS2019 -D SMM_SUPPORT=TRUE -DVARIABLE_SUPPORT=NONE -D SMM_VARIABLE=TRUE
 </pre>
 * Build universal UEFI payload then build the platform payload and patch it to the universal UEFI payload
 <pre>
 python edk2\UefiPayloadPkg\UniversalPayloadBuild.py -t VS2019 -D SMM_SUPPORT=TRUE -DVARIABLE_SUPPORT=NONE
-python edk2-platforms\Features\Intel\PlatformPayloadFeaturePkg\PlatformPayloadFeaturePkg.py -t VS2019 -D SMM_VARIABLE=TRUE -s
+python edk2-platforms-UpXtreme\Features\Intel\PlatformPayloadFeaturePkg\PlatformPayloadFeaturePkg.py -t VS2019 -D SMM_VARIABLE=TRUE -s
 </pre>
 
 If build succeeds, the final UEFI payload is at <B>Build\UefiPayloadPkgX64\UniversalPayload.elf</B>

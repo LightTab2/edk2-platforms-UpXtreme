@@ -10,7 +10,7 @@ industry standards, the transport interfaces such as KCS or I2C for IPMI, PCI VD
 
 Below figure shows the driver stacks which are abstracted to support disparate
 transports for specifications of platform management.
-![Manageability Package Driver Stack](https://github.com/tianocore/edk2-platforms/blob/master/Features/ManageabilityPkg/Documents/Media/ManageabilityDriverStack.svg)
+![Manageability Package Driver Stack](https://github.com/LightTab2/edk2-platforms-UpXtreme/blob/master/Features/ManageabilityPkg/Documents/Media/ManageabilityDriverStack.svg)
 
 ## Manageability Transport edk2 Driver Stack
 edk2 manageability transport library is designed to incorporated with disparate
@@ -180,8 +180,8 @@ platform design.
 
 ## Build the Manageability Package
 In order to use the modules provided by ManageabilityPkg, **PACKAGES_PATH** must
-contains the path to point to [edk2-platform Features](https://github.com/tianocore/edk2-platforms/tree/master/Features):
+contains the path to point to [edk2-platform Features](https://github.com/LightTab2/edk2-platforms-UpXtreme/tree/master/Features):
 
 ```
-$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-platforms/Features
+$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-platforms-UpXtreme/Features
 ```

@@ -43,6 +43,10 @@ UpdatePeiCpuPolicyBoardConfig (
 
   Status = GetConfigBlock ((VOID *) SiPolicyPpi, &gCpuConfigGuid, (VOID *) &CpuConfig);
   ASSERT_EFI_ERROR (Status);
+  //
+  //Enable processor debug features
+  //
+  CpuConfig->DebugInterfaceEnable = 1;
 
   return Status;
 }

@@ -491,7 +491,7 @@ SMBIOS_TABLE_TYPE11 mOemStringsType11 = {
   1 // StringCount
 };
 CHAR8 *mOemStringsType11Strings[] = {
-  "https://github/tianocore/edk2-platforms/Platform/RaspberryPi/",
+  "https://github/tianocore/edk2-platforms-UpXtreme/Platform/RaspberryPi/",
   NULL
 };
 

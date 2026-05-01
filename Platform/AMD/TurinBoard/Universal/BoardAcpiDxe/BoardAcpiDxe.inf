@@ -59,8 +59,8 @@
 
 [BuildOptions.common]
   #
-  # Specify the addtinoal directories for IASL compiler to serach FchSongshanI2C_I3C.asl from either /AGESA/AgesaModulePkg or /edk2-platforms/Platform/AMD.
+  # Specify the addtinoal directories for IASL compiler to serach FchSongshanI2C_I3C.asl from either /AGESA/AgesaModulePkg or /edk2-platforms-UpXtreme/Platform/AMD.
   # /AGESA/AgesaModulePkg has the higher priority to search if this driver is built with AGESA PI release, otherwise the driver is build with opensource AGESA.
   #
-  MSFT:*_*_*_ASL_FLAGS = -I$(WORKSPACE)\AGESA\AgesaModulePkg\Fch\Kunlun\FchKunlunCore\Kunlun -I$(WORKSPACE)\edk2-platforms\Platform\AMD\AgesaModulePkg\Fch\Kunlun\FchKunlunCore\Kunlun
-  GCC:*_*_*_ASL_FLAGS  = -I$(WORKSPACE)/AGESA/AgesaModulePkg/Fch/Kunlun/FchKunlunCore/Kunlun -I$(WORKSPACE)/edk2-platforms/Platform/AMD/AgesaModulePkg/Fch/Kunlun/FchKunlunCore/Kunlun
+  MSFT:*_*_*_ASL_FLAGS = -I$(WORKSPACE)\AGESA\AgesaModulePkg\Fch\Kunlun\FchKunlunCore\Kunlun -I$(WORKSPACE)\edk2-platforms-UpXtreme\Platform\AMD\AgesaModulePkg\Fch\Kunlun\FchKunlunCore\Kunlun
+  GCC:*_*_*_ASL_FLAGS  = -I$(WORKSPACE)/AGESA/AgesaModulePkg/Fch/Kunlun/FchKunlunCore/Kunlun -I$(WORKSPACE)/edk2-platforms-UpXtreme/Platform/AMD/AgesaModulePkg/Fch/Kunlun/FchKunlunCore/Kunlun

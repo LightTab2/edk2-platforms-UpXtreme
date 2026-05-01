@@ -194,28 +194,28 @@ class Settings(CiBuildSettingsManager, UpdateSettingsManager, SetupSettingsManag
 
     def GetPackagesPath(self):
         relpath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        relpath = relpath[:relpath.index("edk2-platforms")]
+        relpath = relpath[:relpath.index("edk2-platforms-UpXtreme")]
         pkgpath = []
         pkgpath.append(relpath)
         pkgpath.append(os.path.join(relpath, "edk2"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Platform", "AMD"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "Debugging"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "Network"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "OutOfBandManagement"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "PowerManagement"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "SystemInformation"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel", "UserInterface"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Features", "Intel"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Platform", "Intel"))
-        pkgpath.append(os.path.join(relpath, "edk2-platforms", "Silicon", "Intel"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Platform", "AMD"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "Debugging"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "Network"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "OutOfBandManagement"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "PowerManagement"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "SystemInformation"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel", "UserInterface"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Features", "Intel"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Platform", "Intel"))
+        pkgpath.append(os.path.join(relpath, "edk2-platforms-UpXtreme", "Silicon", "Intel"))
         return pkgpath
 
     def GetWorkspaceRoot(self):
         ''' get WorkspacePath '''
         wsroot = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        wsroot = os.path.join (wsroot[:wsroot.index("edk2-platforms")], "edk2")
+        wsroot = os.path.join (wsroot[:wsroot.index("edk2-platforms-UpXtreme")], "edk2")
         #return os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         return wsroot
 

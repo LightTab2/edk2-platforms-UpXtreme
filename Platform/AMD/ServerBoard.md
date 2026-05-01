@@ -16,28 +16,28 @@
 | Code base      | Revision                                           |
 |----------------|----------------------------------------------------|
 | edk2           | edk2-stable202402 stable release                   |
-| edk2-platforms | Commid ID 103c88ba5b0c6259fc674e6358c68a85e882e41b |
+| edk2-platforms-UpXtreme | Commid ID 103c88ba5b0c6259fc674e6358c68a85e882e41b |
 | edk2-non-osi   | Commid ID f0bb00937ad6bfdf92d9c7fea9f7277c160d82e9 |
 
 #### <a name="agesa-pi-version-table">Tested AGESA PI Versions</a>
-| AGESA PI Version | edk2-platforms Commit                              | Notes                              |
+| AGESA PI Version | edk2-platforms-UpXtreme Commit                              | Notes                              |
 |------------------|----------------------------------------------------|------------------------------------|
 | 1.0.0.7          | Commit ID 09876ff4b365c5e3cd0f9f97e3d28fa8460fd657 |                                    |
 | 1.0.0.8          | Commit ID 17893ae84e968214ee6db15bf7502531d9034260 |                                    |
 | 1.0.0.9          | Commit ID 0991a0b643509d900e5d023a0116789827a696e5 |                                    |
-| 1.0.0.A          | Commit ID 0991a0b643509d900e5d023a0116789827a696e5 | No edk2-platforms changes required |
+| 1.0.0.A          | Commit ID 0991a0b643509d900e5d023a0116789827a696e5 | No edk2-platforms-UpXtreme changes required |
 
 #### Server boards edk2 build
-AMD server SoC platform firmware reference code can be built using edk2 native build system. As of now the AGESA source code is released to customer in a different way, the AGESA source files under edk2-platforms/Platform/AMD are published to make sure the platform firmware reference code can be built without errors. Those AGESA modules are considered as the NULL instance of AGESA. Customers can request the release version of
+AMD server SoC platform firmware reference code can be built using edk2 native build system. As of now the AGESA source code is released to customer in a different way, the AGESA source files under edk2-platforms-UpXtreme/Platform/AMD are published to make sure the platform firmware reference code can be built without errors. Those AGESA modules are considered as the NULL instance of AGESA. Customers can request the release version of
 AGESA from AMD, replace the NULL instance AGESA modules.
-The open-sourced AGESA modules is still under development and will be upstream to edk2-platforms as the replacement of NULL instance AGESA.
+The open-sourced AGESA modules is still under development and will be upstream to edk2-platforms-UpXtreme as the replacement of NULL instance AGESA.
 
 #### edk2 build steps
 - Create an workspace (**[WorkSpace]**), e.g., "~/Turin" for Linux or "c:\Turin" for Windows.
 - Clone the below repositories (DO NOT update submodule for edk2, [here is the reason](#)) from tianocore to under the **[WorkSpace]**.
 
   - edk2
-  - edk2-platforms
+  - edk2-platforms-UpXtreme
   - edk2-non-osi
 
 #### <a name="Check-out-the-specific-revision">Check out the specific revision</a>
@@ -49,12 +49,12 @@ When checkout edk2 repository to edk2-stable202402, the git URL to subhook repos
 
 For Linux,
 ```
-export PACKAGES_PATH=[WorkSpace]:[WorkSpace]/edk2:[WorkSpace]/edk2-platforms:[WorkSpace]/edk2-platforms/Platform/AMD:[WorkSpace]/edk2-platforms/Platform/AMD/TurinBoard:[WorkSpace]/edk2-platforms/Features:[WorkSpace]/edk2-platforms/Platform/Intel:[WorkSpace]/edk2-platforms/Features/Intel:[WorkSpace]/edk2-platforms/Features/Intel/Network:[WorkSpace]/edk2-platforms/Features/Intel/OutOfBandManagement:[WorkSpace]/edk2-platforms/Features/Intel/Debugging:[WorkSpace]/edk2-platforms/Features/Intel/SystemInformation:[WorkSpace]/edk2-platforms/Features/Intel/PowerManagement:[WorkSpace]/edk2-platforms/Features/Intel/UserInterface:[WorkSpace]/edk2-platforms/Silicon/Intel:[WorkSpace]/edk2-non-osi
+export PACKAGES_PATH=[WorkSpace]:[WorkSpace]/edk2:[WorkSpace]/edk2-platforms-UpXtreme:[WorkSpace]/edk2-platforms-UpXtreme/Platform/AMD:[WorkSpace]/edk2-platforms-UpXtreme/Platform/AMD/TurinBoard:[WorkSpace]/edk2-platforms-UpXtreme/Features:[WorkSpace]/edk2-platforms-UpXtreme/Platform/Intel:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/Network:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/OutOfBandManagement:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/Debugging:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/SystemInformation:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/PowerManagement:[WorkSpace]/edk2-platforms-UpXtreme/Features/Intel/UserInterface:[WorkSpace]/edk2-platforms-UpXtreme/Silicon/Intel:[WorkSpace]/edk2-non-osi
 ```
 
 ##### For Windows,
 ```
-set PACKAGES_PATH=[WorkSpace];[WorkSpace]\edk2;[WorkSpace]\edk2-platforms;[WorkSpace]\edk2-platforms\Platform\AMD;[WorkSpace]\edk2-platforms\Platform\AMD\TurinBoard;[WorkSpace]\edk2-platforms\Features;[WorkSpace]\edk2-platforms\Platform\Intel;[WorkSpace]\edk2-platforms\Features\Intel;[WorkSpace]\edk2-platforms\Features\Intel\Network;[WorkSpace]\edk2-platforms\Features\Intel\OutOfBandManagement;[WorkSpace]\edk2-platforms\Features\Intel\Debugging;[WorkSpace]\edk2-platforms\Features\Intel\SystemInformation;[WorkSpace]\edk2-platforms\Features\Intel\PowerManagement;[WorkSpace]\edk2-platforms\Features\Intel\UserInterface;[WorkSpace]\edk2-platforms\Silicon\Intel;[WorkSpace]\edk2-non-osi
+set PACKAGES_PATH=[WorkSpace];[WorkSpace]\edk2;[WorkSpace]\edk2-platforms-UpXtreme;[WorkSpace]\edk2-platforms-UpXtreme\Platform\AMD;[WorkSpace]\edk2-platforms-UpXtreme\Platform\AMD\TurinBoard;[WorkSpace]\edk2-platforms-UpXtreme\Features;[WorkSpace]\edk2-platforms-UpXtreme\Platform\Intel;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\Network;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\OutOfBandManagement;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\Debugging;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\SystemInformation;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\PowerManagement;[WorkSpace]\edk2-platforms-UpXtreme\Features\Intel\UserInterface;[WorkSpace]\edk2-platforms-UpXtreme\Silicon\Intel;[WorkSpace]\edk2-non-osi
 ```
 
 #### Configure edk2 tools path.

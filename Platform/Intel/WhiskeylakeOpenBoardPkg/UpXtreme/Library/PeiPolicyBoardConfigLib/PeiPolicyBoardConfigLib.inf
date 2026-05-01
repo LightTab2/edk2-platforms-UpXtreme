@@ -54,6 +54,7 @@
   gPchGeneralConfigGuid                         ## CONSUMES
   gEfiTpmDeviceInstanceTpm20DtpmGuid
   gEfiTpmDeviceInstanceTpm12Guid
+  gDciPreMemConfigGuid
 
 [Ppis]
   gEfiPeiReadOnlyVariable2PpiGuid               ## CONSUMES

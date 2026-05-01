@@ -23,7 +23,7 @@ This document provides guidelines for building UEFI firmware for Sophgo SG2042. 
 
 -   Into that folder, clone
    1. [edk2](https://github.com/tianocore/edk2)
-   1. [edk2-platforms](https://github.com/tianocore/edk2-platforms)
+   1. [edk2-platforms-UpXtreme](https://github.com/LightTab2/edk2-platforms-UpXtreme)
    1. [edk2-non-osi](https://github.com/tianocore/edk2-non-osi) (if building
       platforms that need it)
    ```
@@ -31,8 +31,8 @@ This document provides guidelines for building UEFI firmware for Sophgo SG2042. 
    $ cd edk2
    $ git submodule update --init
    ...
-   $ git clone https://github.com/tianocore/edk2-platforms.git
-   $ cd edk2-platforms
+   $ git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
+   $ cd edk2-platforms-UpXtreme
    $ git submodule update --init
    ...
    $ git clone https://github.com/tianocore/edk2-non-osi.git
@@ -40,7 +40,7 @@ This document provides guidelines for building UEFI firmware for Sophgo SG2042. 
 -  Set up a **PACKAGES_PATH** to point to the locations of these three
    repositories:
 
-   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/edk2-non-osi`
+   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/edk2-non-osi`
 
 ### 3. Manual building
 

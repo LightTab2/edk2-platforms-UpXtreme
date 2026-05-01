@@ -34,13 +34,13 @@ provide their own packaged cross-toolchains.
 
 2. Into that folder, clone:
    1. [edk2](https://github.com/tianocore/edk2)
-   2. [edk2-platforms](https://github.com/tianocore/edk2-platforms)
+   2. [edk2-platforms-UpXtreme](https://github.com/LightTab2/edk2-platforms-UpXtreme)
    ```
    $ git clone https://github.com/tianocore/edk2.git
    $ cd edk2 && git submodule update --init && cd $WORKSPACE
    ...
-   $ git clone https://github.com/tianocore/edk2-platforms.git
-   $ cd edk2-platforms && git submodule update --init && cd $WORKSPACE
+   $ git clone https://github.com/LightTab2/edk2-platforms-UpXtreme.git
+   $ cd edk2-platforms-UpXtreme && git submodule update --init && cd $WORKSPACE
    ```
 
 3. Provide devicetree blob (DTB) corresponding to the Qualcomm target like for
@@ -53,7 +53,7 @@ provide their own packaged cross-toolchains.
 4. Set up a **PACKAGES_PATH** to point to the locations of these three
    repositories:
 
-   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms:$PWD/devicetree`
+   `$ export PACKAGES_PATH=$PWD/edk2:$PWD/edk2-platforms-UpXtreme:$PWD/devicetree`
 
 ## Manual building
 
@@ -96,7 +96,7 @@ Create an ELF payload as expected by Qualcomm early stage proprietary boot-loade
 XBL:
 ```
 $ cd $WORKSPACE
-$ ./edk2-platforms/Platform/Qualcomm/RB3Gen2/RB3Gen2-generate-elf.sh RELEASE
+$ ./edk2-platforms-UpXtreme/Platform/Qualcomm/RB3Gen2/RB3Gen2-generate-elf.sh RELEASE
 ```
 Note that this shell script uses [qtestsign](https://github.com/msm8916-mainline/qtestsign)
 to add a dummy signature/certificate chain. For production builds, you need to

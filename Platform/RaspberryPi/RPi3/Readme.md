@@ -31,7 +31,7 @@ Please see the RPi4 target for BCM2711-based variants, such as the Raspberry Pi 
 # Status
 
 This firmware, that has been validated to compile against the current
-[edk2](https://github.com/tianocore/edk2)/[edk2-platforms](https://github.com/tianocore/edk2-platforms),
+[edk2](https://github.com/tianocore/edk2)/[edk2-platforms-UpXtreme](https://github.com/LightTab2/edk2-platforms-UpXtreme),
 should be able to boot Linux (Debian, Ubuntu, SUSE), NetBSD, FreeBSD as well as Windows
 10 ARM64 (full GUI version).
 
@@ -49,7 +49,7 @@ please see [Systems.md](./Systems.md).
 
 # Building
 
-Build instructions from the top level edk2-platforms Readme.md apply.
+Build instructions from the top level edk2-platforms-UpXtreme Readme.md apply.
 
 # Booting the firmware
 

@@ -26,11 +26,13 @@
   BoardInitLib
   TestPointCheckLib
   SetCacheMtrrLib
+  SmmRelocationLib
 
 [Packages]
   MinPlatformPkg/MinPlatformPkg.dec
   MdeModulePkg/MdeModulePkg.dec
   MdePkg/MdePkg.dec
+  UefiCpuPkg/UefiCpuPkg.dec
 
 [Sources]
   PlatformInitPostMem.c
@@ -40,6 +42,11 @@
 [Ppis]
   gEfiEndOfPeiSignalPpiGuid                     ## CONSUMES
   gEfiPeiReadOnlyVariable2PpiGuid
+  gEfiPeiMpServices2PpiGuid                     ## CONSUMES
+  gEdkiiSiliconInitializedPpiGuid               ## NOTIFY
+
+[Guids]
+  gSmmBaseHobGuid                               ## CONSUMES
 
 [Protocols]
 
